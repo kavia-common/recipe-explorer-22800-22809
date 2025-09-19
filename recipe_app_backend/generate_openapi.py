@@ -1,9 +1,8 @@
 import json
 import os
-from app import app, api  # import your Flask app and Api instance
+from app import app, api  # keep compatibility if imported by existing tooling
 
 with app.app_context():
-    # flask-smorest stores the spec in api.spec
     openapi_spec = api.spec.to_dict()
 
     output_dir = "interfaces"
